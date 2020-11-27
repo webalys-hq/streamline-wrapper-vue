@@ -1,24 +1,35 @@
-# streamline-wrapper-vue
+# Vue wrapper for Streamline icons and illustrations
 
-## Project setup
-```
-yarn install
-```
+This is a small Vue library which allows you to render Streamline SVG icons and illustrations.
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+## How to install
 
-### Compiles and minifies for production
-```
-yarn build
-```
+1. `yarn add @streamlinehq/streamline-wrapper-vue`
 
-### Lints and fixes files
-```
-yarn lint
-```
+## How to use
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Check `docs/example-vue-app` project created with CRA to see it in use.
+
+```
+<template>
+<streamline-icon :icon="icon"></streamline-icon>
+</template>
+
+<script lang="ts">
+import StreamlineIcon from '@streamlinehq/streamline-wrapper-vue'
+// Imported as Streamline's Icon type. Check source for more details
+import HouseIcon from '@/icon'
+
+@Options({
+  data() {
+    return {
+      icon: HouseIcon
+    }
+  },
+  components: {StreamlineIcon}
+})
+export default class HelloWorld extends Vue {
+// your main component here
+}
+</script>
+``` 

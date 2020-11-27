@@ -1,7 +1,20 @@
 {
-  "name": "streamline-wrapper-vue",
+  "name": "@streamlinehq/streamline-wrapper-vue",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "description": "Vue wrapper for Streamline icons and illustrations",
+  "keywords": ["vue", "streamline", "streamline-icons", "icons", "wrapper", "svg", "illustration"],
+  "author": "<support@webalys.com>",
+  "homepage": "https://app.streamline.to",
+  "license": "MIT",
+  "bugs": {
+    "email": "support@webalys.com",
+    "url": "https://github.com/webalys-hq/streamline-wrapper-vue/issues"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/webalys-hq/streamline-wrapper-vue"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
