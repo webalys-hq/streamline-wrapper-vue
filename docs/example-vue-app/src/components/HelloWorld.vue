@@ -62,7 +62,7 @@
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import StreamlineIcon from "@/components/StreamlineIcon.vue";
+import StreamlineIcon from "../../../../src/components/StreamlineIcon.vue";
 import HouseIcon from "@/icon";
 
 @Options({

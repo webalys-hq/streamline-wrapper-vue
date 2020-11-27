@@ -11,7 +11,7 @@
 // eslint-disable-next-line no-unused-vars
 import { defineComponent, PropType } from 'vue'
 // eslint-disable-next-line no-unused-vars
-import {Icon, iconOptions} from "@/components/StreamlineIcon.vue";
+import {Icon, iconOptions} from "./StreamlineIcon.vue";
 
 export default defineComponent({
   props: {

@@ -47,7 +47,7 @@
 <script lang="ts">
 // eslint-disable-next-line no-unused-vars
 import { defineComponent, PropType } from 'vue'
-import IconPath from "@/components/IconPath.vue";
+import IconPath from "./IconPath.vue";
 
 type iconSlug = string
 type iconWidth = number
