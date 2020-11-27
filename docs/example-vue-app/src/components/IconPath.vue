@@ -7,14 +7,21 @@
   />
 </template>
 
-<script>
-export default {
+<script lang="ts">
+// eslint-disable-next-line no-unused-vars
+import { defineComponent, PropType } from 'vue'
+// eslint-disable-next-line no-unused-vars
+import {Icon, iconOptions} from "@/components/StreamlineIcon.vue";
+
+export default defineComponent({
   props: {
     icon: {
-      type: [String, Number, Array, Object]
+      type:  Object as PropType<Icon>,
+      required: true
     },
     index: {
-      type: Number
+      type: Number,
+      required: true
     },
     path: {
       type: String
@@ -27,13 +34,17 @@ export default {
     }
   },
   computed: {
-    options () {
-      const tempIcon = this.icon[3]
-      const tempOptions = { ...tempIcon[this.index] }
-      tempOptions.stroke = this.stroke || tempIcon[this.index].stroke
-      tempOptions.fill = this.fill || tempIcon[this.index].fill
-      return tempOptions
+    options (): iconOptions {
+      const {stroke, icon, index, fill} = this;
+
+      return {
+        stroke: stroke || icon[3][index].stroke,
+        fill: fill || icon[3][index].fill,
+        'stroke-linecap': icon[3][index]['stroke-linecap'],
+        'stroke-linejoin': icon[3][index]['stroke-linejoin'],
+        'stroke-width': icon[3][index]['stroke-width'],
+      }
     }
   }
-}
+})
 </script>

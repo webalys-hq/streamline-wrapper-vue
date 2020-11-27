@@ -1,13 +1,12 @@
 <template>
-  <span
+  <i
       class="Streamline_Icon"
       :class="{
-      'Streamline_Icon_Spin': spin,
-      'Streamline_Icon_Pulse': pulse,
-      'Streamline_Animation_Infinite': infinite,
-      'Streamline_Icon_Fast': fast,
-      'Streamline_Icon_EaseInOut': easeInOut,
-      'Streamline_Icon_Animated': spin || pulse
+      'Streamline_Icon--spin': spin,
+      'Streamline_Icon--infinite': infinite,
+      'Streamline_Icon--animated': spin,
+      'Streamline_Animation--fast': fast,
+      'Streamline_Animation--ease_in_out': easeInOut,
     }"
   >
     <svg
@@ -31,29 +30,56 @@
         />
       </g>
       <svg v-else>
-          <icon-path
-              v-for="(path, index) in icon[4]"
-              :icon="icon"
-              :path="path"
-              :index="index"
-              :stroke="stroke"
-              :fill="fill"
-              :key="index"
-          />
+        <icon-path
+            v-for="(path, index) in icon[4]"
+            :icon="icon"
+            :path="path"
+            :index="index"
+            :stroke="stroke"
+            :fill="fill"
+            :key="index"
+        />
       </svg>
     </svg>
-  </span>
+  </i>
 </template>
 
-<script>
-import IconPath from './IconPath'
-export default {
+<script lang="ts">
+// eslint-disable-next-line no-unused-vars
+import { defineComponent, PropType } from 'vue'
+import IconPath from "@/components/IconPath.vue";
+
+type iconSlug = string
+type iconWidth = number
+type iconHeight = number
+export type iconOptions = {
+  fill: string
+  stroke: string
+  'stroke-linecap': 'butt' | 'round' | 'square' | 'inherit'
+  'stroke-linejoin': 'miter' | 'round' | 'bevel' | 'inherit'
+  'stroke-width': number | string
+}
+type iconRepresentation = string
+export type Icon = [
+  iconSlug,
+  iconWidth,
+  iconHeight,
+  iconOptions[],
+  iconRepresentation[],
+]
+interface sizeObject {
+  width: iconWidth
+  height: iconHeight
+  isDefault: boolean
+}
+export default defineComponent({
   components: {
     IconPath
   },
   props: {
     icon: {
-      type: [String, Number, Array, Object]
+      type: Object as PropType<Icon>,
+      required: true
     },
     fill: {
       type: String
@@ -75,10 +101,6 @@ export default {
       type: Boolean,
       default: false
     },
-    pulse: {
-      type: Boolean,
-      default: false
-    },
     infinite: {
       type: Boolean,
       default: false
@@ -93,9 +115,10 @@ export default {
     }
   },
   computed: {
-    computedSize () {
-      const { icon, size } = this
-      const sizeObject = {
+    computedSize (): sizeObject {
+      const { icon, size, height, width } = this
+
+      const sizeObject: sizeObject = {
         width: icon[1],
         height: icon[2],
         isDefault: true
@@ -105,45 +128,42 @@ export default {
         sizeObject.height = size
         sizeObject.width = size
       } else {
-        if (this.height && parseInt(this.height) !== sizeObject.height) {
-          sizeObject.height = this.height
+        if (height && height !== sizeObject.height) {
+          sizeObject.height = height
           sizeObject.isDefault = false
         }
-        if (this.width && parseInt(this.width) !== sizeObject.width) {
-          sizeObject.width = this.width
+        if (width && width !== sizeObject.width) {
+          sizeObject.width = width
           sizeObject.isDefault = false
         }
       }
       return sizeObject
     }
   }
-}
+})
 </script>
 
 <style>
 .Streamline_Icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: content-box;
+  display: inline-block;
 }
-.Streamline_Icon_Animated {
+.Streamline_Icon--animated {
   animation-duration: 1s;
   animation-fill-mode: both;
   transform-origin: center;
   animation-timing-function: linear;
 }
-.Streamline_Icon_Spin {
+.Streamline_Icon--spin {
   animation-name: rotate;
   animation-duration: 2s;
 }
-.Streamline_Animation_Infinite {
+.Streamline_Icon--infinite {
   animation-iteration-count: infinite;
 }
-.Streamline_Animation_Fast {
+.Streamline_Animation--fast {
   animation-duration: 1s;
 }
-.Streamline_Animation_EaseInOut {
+.Streamline_Animation--ease_in_out {
   animation-timing-function: ease-in-out;
 }
 @keyframes rotate {
