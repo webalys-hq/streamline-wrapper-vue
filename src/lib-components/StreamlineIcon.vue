@@ -44,41 +44,18 @@
   </i>
 </template>
 
-<script lang="ts">
-// eslint-disable-next-line no-unused-vars
-import { defineComponent, PropType } from 'vue'
+<script>
+import Vue from 'vue';
 import IconPath from "./IconPath.vue";
 
-type iconSlug = string
-type iconWidth = number
-type iconHeight = number
-export type iconOptions = {
-  fill: string
-  stroke: string
-  'stroke-linecap': 'butt' | 'round' | 'square' | 'inherit'
-  'stroke-linejoin': 'miter' | 'round' | 'bevel' | 'inherit'
-  'stroke-width': number | string
-}
-type iconRepresentation = string
-export type Icon = [
-  iconSlug,
-  iconWidth,
-  iconHeight,
-  iconOptions[],
-  iconRepresentation[],
-]
-interface sizeObject {
-  width: iconWidth
-  height: iconHeight
-  isDefault: boolean
-}
-export default defineComponent({
+export default Vue.extend({
+  name: 'StreamlineIcon',
   components: {
     IconPath
   },
   props: {
     icon: {
-      type: Object as PropType<Icon>,
+      type: Array,
       required: true
     },
     fill: {
@@ -115,10 +92,10 @@ export default defineComponent({
     }
   },
   computed: {
-    computedSize (): sizeObject {
+    computedSize () {
       const { icon, size, height, width } = this
 
-      const sizeObject: sizeObject = {
+      const sizeObject = {
         width: icon[1],
         height: icon[2],
         isDefault: true

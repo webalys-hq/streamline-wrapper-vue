@@ -1,3 +1,21 @@
+<script>
+import Vue from 'vue';
+import { StreamlineIcon } from '@/entry';
+import HouseIcon from './icon'
+
+export default Vue.extend({
+  name: 'ServeDev',
+  components: {
+    StreamlineIcon,
+  },
+  data() {
+    return {
+      icon: HouseIcon
+    }
+  },
+});
+</script>
+
 <template>
   <main>
     <h1>
@@ -59,39 +77,3 @@
     </section>
   </main>
 </template>
-
-<script lang="ts">
-import { Options, Vue } from 'vue-class-component';
-import StreamlineIcon from "../../../../src/components/StreamlineIcon.vue";
-import HouseIcon from "@/icon";
-
-@Options({
-  data() {
-    return {
-      icon: HouseIcon
-    }
-  },
-  components: {StreamlineIcon}
-})
-export default class HelloWorld extends Vue {
-
-}
-</script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>

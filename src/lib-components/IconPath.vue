@@ -7,16 +7,14 @@
   />
 </template>
 
-<script lang="ts">
-// eslint-disable-next-line no-unused-vars
-import { defineComponent, PropType } from 'vue'
-// eslint-disable-next-line no-unused-vars
-import {Icon, iconOptions} from "./StreamlineIcon.vue";
+<script>
+import Vue from 'vue'
 
-export default defineComponent({
+export default Vue.extend({
+  name: 'IconPath',
   props: {
     icon: {
-      type:  Object as PropType<Icon>,
+      type:  Array,
       required: true
     },
     index: {
@@ -34,7 +32,7 @@ export default defineComponent({
     }
   },
   computed: {
-    options (): iconOptions {
+    options () {
       const {stroke, icon, index, fill} = this;
 
       return {
