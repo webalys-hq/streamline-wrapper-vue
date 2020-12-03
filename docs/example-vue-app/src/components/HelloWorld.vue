@@ -60,21 +60,18 @@
   </main>
 </template>
 
-<script lang="ts">
-import { Options, Vue } from 'vue-class-component';
-import StreamlineIcon from "@streamlinehq/streamline-wrapper-vue";
+<script>
+import {StreamlineIcon} from "@streamlinehq/streamline-wrapper-vue";
 import HouseIcon from "@/icon";
 
-@Options({
+export default {
+  name: 'HelloWorld',
   data() {
     return {
       icon: HouseIcon
     }
   },
   components: {StreamlineIcon}
-})
-export default class HelloWorld extends Vue {
-
 }
 </script>
 

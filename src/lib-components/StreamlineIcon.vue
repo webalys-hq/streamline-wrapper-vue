@@ -45,10 +45,9 @@
 </template>
 
 <script>
-import Vue from 'vue';
 import IconPath from "./IconPath.vue";
 
-export default Vue.extend({
+export default {
   name: 'StreamlineIcon',
   components: {
     IconPath
@@ -117,7 +116,7 @@ export default Vue.extend({
       return sizeObject
     }
   }
-})
+}
 </script>
 
 <style>
