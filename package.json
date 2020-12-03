@@ -1,6 +1,6 @@
 {
   "name": "@streamlinehq/streamline-wrapper-vue",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "private": false,
   "description": "Vue wrapper for Streamline icons and illustrations",
   "keywords": ["vue", "streamline", "streamline-icons", "icons", "wrapper", "svg", "illustration"],
@@ -19,10 +19,12 @@
   "browser": "dist/streamline-wrapper-vue.esm.js",
   "module": "dist/streamline-wrapper-vue.esm.js",
   "unpkg": "dist/streamline-wrapper-vue.min.js",
+  "types": "index.d.ts",
 
   "files": [
     "dist/*",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    "index.d.ts"
   ],
 
   "scripts": {
