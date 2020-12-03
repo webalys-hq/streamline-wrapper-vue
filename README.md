@@ -15,21 +15,19 @@ Check `docs/example-vue-app` project created with CRA to see it in use.
 <streamline-icon :icon="icon"></streamline-icon>
 </template>
 
-<script lang="ts">
-import StreamlineIcon from '@streamlinehq/streamline-wrapper-vue'
+<script>
+import {StreamlineIcon} from "@streamlinehq/streamline-wrapper-vue"
 // Imported as Streamline's Icon type. Check source for more details
 import HouseIcon from '@/icon'
 
-@Options({
+export default {
+  name: 'HelloWorld',
   data() {
     return {
       icon: HouseIcon
     }
   },
   components: {StreamlineIcon}
-})
-export default class HelloWorld extends Vue {
-// your main component here
 }
 </script>
 ``` 
