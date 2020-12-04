@@ -916,10 +916,10 @@
   resolved "https://registry.yarnpkg.com/@soda/get-current-script/-/get-current-script-1.0.2.tgz#a53515db25d8038374381b73af20bb4f2e508d87"
   integrity sha512-T7VNNlYVM1SgQ+VsMYhnDkcGmWhQdL0bDyGm5TlQ3GBXnJscEClUUOKduWTmm2zCnvNLC1hc3JpuXjs/nFOc5w==
 
-"@streamlinehq/streamline-wrapper-vue@^0.9.3":
-  version "0.9.3"
-  resolved "https://registry.yarnpkg.com/@streamlinehq/streamline-wrapper-vue/-/streamline-wrapper-vue-0.9.3.tgz#9df107511fa7dccec607ba5a761431f4917032d5"
-  integrity sha512-f4ArHtNcuwk0+CdEpz+infwoba0EI1jC+Z8CdIJdNDl5t+Kw2syn43PZZr5CANm4b4Dgox6SiIOFtIkoSTJVUA==
+"@streamlinehq/streamline-wrapper-vue@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@streamlinehq/streamline-wrapper-vue/-/streamline-wrapper-vue-1.0.0.tgz#1febb93fefbd1441d155f6c7839114e9b0d02178"
+  integrity sha512-8DoVN6+TrnjULsd9o1nrRT8EqmdxGYLVMvvNGxqVIGMB4+ySuMMDZ5pV7QUnYEL3b4SubWtOKtJHjEhgANBDEQ==
 
 "@types/anymatch@*":
   version "1.3.1"

@@ -1,7 +1,7 @@
 <template>
   <main>
     <h1>
-      Streamline icons Vue example
+      Streamline icons Vue 2 example
     </h1>
     <section>
       <figure>
