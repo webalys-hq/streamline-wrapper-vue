@@ -1,6 +1,8 @@
-# Vue wrapper for Streamline icons and illustrations
+# Vue 2 wrapper for Streamline icons and illustrations
 
 This is a small Vue library which allows you to render Streamline SVG icons and illustrations.
+
+Note that it only supports Vue 2. Pull requests for Vue 3 support are welcome!
 
 ## How to install
 

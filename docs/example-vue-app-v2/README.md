@@ -1,4 +1,4 @@
-# example-vue-app
+# example-vue-app for Vue version 2
 
 ## Project setup
 ```
