@@ -1,6 +1,6 @@
 {
   "name": "@streamlinehq/streamline-wrapper-vue",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": false,
   "description": "Vue wrapper for Streamline icons and illustrations",
   "keywords": [
