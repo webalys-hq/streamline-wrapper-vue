@@ -1,9 +1,17 @@
 {
   "name": "@streamlinehq/streamline-wrapper-vue",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "private": false,
   "description": "Vue wrapper for Streamline icons and illustrations",
-  "keywords": ["vue", "streamline", "streamline-icons", "icons", "wrapper", "svg", "illustration"],
+  "keywords": [
+    "vue",
+    "streamline",
+    "streamline-icons",
+    "icons",
+    "wrapper",
+    "svg",
+    "illustration"
+  ],
   "author": "<support@webalys.com>",
   "homepage": "https://app.streamline.to",
   "license": "MIT",
@@ -12,21 +20,19 @@
     "url": "https://github.com/webalys-hq/streamline-wrapper-vue/issues"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/webalys-hq/streamline-wrapper-vue"
+    "type": "git",
+    "url": "https://github.com/webalys-hq/streamline-wrapper-vue"
   },
   "main": "dist/streamline-wrapper-vue.ssr.js",
   "browser": "dist/streamline-wrapper-vue.esm.js",
   "module": "dist/streamline-wrapper-vue.esm.js",
   "unpkg": "dist/streamline-wrapper-vue.min.js",
   "types": "index.d.ts",
-
   "files": [
     "dist/*",
     "src/**/*.vue",
     "index.d.ts"
   ],
-
   "scripts": {
     "serve": "vue-cli-service serve dev/serve.js",
     "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
@@ -34,10 +40,7 @@
     "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
     "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife"
   },
-
-  "dependencies": {
-  },
-
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
