@@ -1,3 +1,6 @@
+# Deprecated
+Warning, this package is deprecated and will be removed on June 1st 2021. Please use our new package [streamlinehq](https://github.com/webalys-hq/streamlinehq-npm) instead, it provides a much better user experience.
+
 # Vue 2 wrapper for Streamline icons and illustrations
 
 This is a small Vue library which allows you to render Streamline SVG icons and illustrations.
